@@ -2,6 +2,10 @@
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
+!web/app/mu-plugins/custom-post-types
+!web/app/mu-plugins/graphql
+!web/app/mu-plugins/headless-mode
+!web/app/mu-plugins/import-svg
 web/app/themes/twentytwentyfour/*
 web/app/upgrade
 web/app/uploads/*

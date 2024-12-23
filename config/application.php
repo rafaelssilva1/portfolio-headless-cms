@@ -121,6 +121,11 @@ Config::define('DISALLOW_FILE_MODS', true);
 // Limit the number of post revisions
 Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?? false);
 
+/*
+ * JWT secret key config
+ */
+Config::define('GRAPHQL_JWT_AUTH_SECRET_KEY', env('GRAPHQL_JWT_AUTH_SECRET_KEY'));
+
 /**
  * Debugging Settings
  */
