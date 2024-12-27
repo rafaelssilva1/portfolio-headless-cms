@@ -57,6 +57,10 @@ add_action('graphql_register_types', function () {
                 'type' => 'String',
                 'description' => __('Photo', 'quirk'),
             ],
+            'cv' => [
+                'type' => 'String',
+                'description' => __('CV', 'quirk'),
+            ],
         ],
     ]);
 
@@ -206,6 +210,9 @@ add_action('graphql_register_types', function () {
                 $id = get_option('details_photo');
                 $photo = wp_get_attachment_url($id[0]);
                 
+                $pod = pods('details');
+                $cv = $pod->display( 'cv' );
+                
                 $socialIds = get_option('details_social');
 
                 $social = [];
@@ -230,8 +237,10 @@ add_action('graphql_register_types', function () {
                     'summary' => $summary,
                     'social' => $social,
                     'photo' => $photo,
+                    'cv' => $cv,
                 ];
             }
         ],
     ]);
 });
+
