@@ -91,6 +91,22 @@ add_action('graphql_register_types', function () {
                 return $technologies;
             }
         ],
+        'projectLink' => [
+            'type' => 'String',
+            'description' => __('Project link', 'quirk'),
+            'resolve' => function () {
+                $link = get_post_meta(get_the_ID(), 'link', true);
+                return $link;
+            }
+        ],
+        'order' => [
+            'type' => 'Number',
+            'description' => __('Order', 'quirk'),
+            'resolve' => function () {
+                $order = get_post_meta(get_the_ID(), 'order', true);
+                return $order;
+            }
+        ],
     ]);
 
     register_graphql_fields('Education', [
@@ -243,3 +259,4 @@ add_action('graphql_register_types', function () {
         ],
     ]);
 });
+
